@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juego de Memoria - DOM y Eventos</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="contenedor">
+    <header>
+      <h1>Memoria JS</h1>
+      <p>Movimientos: <span id="contador-movimientos">0</span></p>
+      <button id="btn-reiniciar">Reiniciar Juego</button>
+    </header>
+    
+    <div id="tablero" class="tablero"></div>
+    
+    <div id="mensaje-victoria" class="oculto">
+      <h2>¡Has ganado!</h2>
+    </div>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
