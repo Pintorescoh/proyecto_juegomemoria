@@ -10,7 +10,21 @@
   <main class="contenedor">
     <header>
       <h1>Memoria JS</h1>
-      <p>Movimientos: <span id="contador-movimientos">0</span></p>
+      
+      <div class="controles">
+        <label for="select-dificultad">Dificultad: </label>
+        <select id="select-dificultad">
+          <option value="facil">Fácil (4 pares)</option>
+          <option value="medio">Medio (6 pares)</option>
+          <option value="dificil" selected>Difícil (8 pares)</option>
+        </select>
+      </div>
+
+      <div class="marcador">
+        <p>Movimientos actuales: <span id="contador-movimientos">0</span></p>
+        <p>Mejor Récord: <span id="record-movimientos">-</span> movimientos</p>
+      </div>
+
       <button id="btn-reiniciar">Reiniciar Juego</button>
     </header>
     

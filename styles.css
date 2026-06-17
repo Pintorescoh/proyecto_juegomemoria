@@ -50,3 +50,31 @@ body {
 .oculto {
   display: none;
 }
+
+/* Estilos adicionales para los controles y el marcador */
+.controles {
+  margin: 15px 0;
+}
+
+.controles select {
+  padding: 6px 12px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+}
+
+.marcador {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 15px;
+  font-weight: 500;
+  background: #e4e0d4;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.marcador p {
+  margin: 0;
+}
