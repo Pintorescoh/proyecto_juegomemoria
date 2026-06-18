@@ -1,4 +1,4 @@
-# Proyecto: Juego de Memoria en JavaScript Vanilla
+# Proyecto: Juego de Memoria en JavaScript Vanilla (https://pintorescoh.github.io/proyecto_juegomemoria/)
 ## 1. Ayuda de la IA
  * La IA me ayudó a construir toda la estructura del juego, el index.html, app.js, styles.css y auditar el código defectuoso, además de corregir. También me apoyé con otra IA para optimizar aún más el código entregado.
 
