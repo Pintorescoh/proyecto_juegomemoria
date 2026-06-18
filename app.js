@@ -71,16 +71,33 @@ function actualizarUI() {
   domTablero.innerHTML = ''; 
 
   state.cartas.forEach((carta, indice) => {
-    const divCarta = document.createElement('div');
-    divCarta.classList.add('carta');
-    divCarta.dataset.indice = indice;
+    // 1. Usamos botón por semántica y accesibilidad
+    const btnCarta = document.createElement('button');
+    btnCarta.classList.add('carta');
+    btnCarta.dataset.indice = indice;
+
+    // 2. Estado por defecto para lectores de pantalla
+    let etiquetaAria = `Carta ${indice + 1}, boca abajo`;
 
     if (carta.volteada || carta.encontrada) {
-      divCarta.textContent = carta.emoji; // textContent seguro contra XSS
-      divCarta.classList.add(carta.encontrada ? 'encontrada' : 'revelada');
+      btnCarta.textContent = carta.emoji; 
+      btnCarta.classList.add(carta.encontrada ? 'encontrada' : 'revelada');
+      
+      // 3. Actualizamos la etiqueta para reflejar la acción
+      etiquetaAria = carta.encontrada 
+        ? `Carta ${indice + 1} encontrada, es el emoji ${carta.emoji}` 
+        : `Carta ${indice + 1} volteada, es el emoji ${carta.emoji}`;
+
+      // Si la carta ya fue encontrada, deshabilitamos el botón nativamente
+      if (carta.encontrada) {
+        btnCarta.disabled = true;
+      }
     }
 
-    domTablero.appendChild(divCarta);
+    // 4. Inyectamos la etiqueta de accesibilidad
+    btnCarta.setAttribute('aria-label', etiquetaAria);
+    
+    domTablero.appendChild(btnCarta);
   });
 }
 
@@ -93,7 +110,7 @@ function actualizarRecordVisual() {
   domRecord.textContent = recordGuardado ? recordGuardado : '-';
 }
 
-// Lógica de evaluación del turno
+// Lógica de evaluación del turno (Optimizada final)
 function verificarPar() {
   state.bloqueado = true; 
 
@@ -111,8 +128,9 @@ function verificarPar() {
     
     actualizarUI();
 
-    // Condición de victoria basada en la cantidad de parejas del nivel actual
-    let cantidadParesObjetivo = poolEmojis.slice(0, state.dificultad === 'facil' ? 4 : state.dificultad === 'medio' ? 6 : 8).length;
+    // Cálculo limpio y directo: Evitamos crear arreglos innecesarios en memoria
+    const cantidadParesObjetivo = state.dificultad === 'facil' ? 4 : 
+                                  state.dificultad === 'medio' ? 6 : 8;
     
     if (state.paresEncontrados === cantidadParesObjetivo) {
       domMensajeVictoria.classList.remove('oculto');
@@ -127,8 +145,6 @@ function verificarPar() {
       actualizarUI();
     }, 1000);
   }
-  
-  actualizarUI();
 }
 
 // Gestiona el almacenamiento persistente del mejor puntaje
