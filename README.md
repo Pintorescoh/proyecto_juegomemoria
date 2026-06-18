@@ -19,7 +19,7 @@
 
  *  En la función actualizarUI()
 
-    Creó el elemento de las cartas con "div" lo cuál no está mal, pero es mejor usar "button", ya  que es un elemento enfocable y el navegador lo reconoce al querer acceder con el teclado y no solo con el mouse, lo que mejora la accesibilidad hacia los usuarios. 
+    Creó el elemento de las cartas con `div` lo cuál no está mal, pero es mejor usar `button`, ya  que es un elemento enfocable y el navegador lo reconoce al querer acceder con el teclado y no solo con el mouse, lo que mejora la accesibilidad hacia los usuarios. 
 
 
 ## 2. Desiciones de diseño de la app
