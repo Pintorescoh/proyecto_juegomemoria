@@ -15,10 +15,11 @@
      const cantidadParesObjetivo = state.dificultad === 'facil' ? 4 :
                               state.dificultad === 'medio' ? 6 : 8;
      
-     Así evitas recalcular con slice.
+     Así evitar recalcular con slice.
 
- *  En la función actualizarUI() 
-     Creó el elemento de las cartar con <div> lo cuál no está mal, pero es mejor usar <button>, ya  que es un elemento enfocable y el navegador lo reconoce al querer acceder con el teclado y no solo con el mouse, lo que mejora la accesibilidad hacia los usuarios. 
+ *  En la función actualizarUI()
+
+    Creó el elemento de las cartas con "div" lo cuál no está mal, pero es mejor usar "button", ya  que es un elemento enfocable y el navegador lo reconoce al querer acceder con el teclado y no solo con el mouse, lo que mejora la accesibilidad hacia los usuarios. 
 
 
 ## 2. Desiciones de diseño de la app
